@@ -28,6 +28,12 @@ public class Ironman {
             menu();
             input = scan.nextLine();
             menuChoices(input, scan);
+            if(fightersLeftP1.size() == 0 || fightersLeftP2.size() == 0) {
+                input = "6";
+                win();
+                System.out.println("Press Enter to close.");
+                scan.nextLine();
+            }
         }
         scan.close();
     }
@@ -222,7 +228,9 @@ public class Ironman {
      * post: Menu printed to console
      */
     private static void menu() {
-        System.out.println("\nEnter a number: ");
+        System.out.println("\nPlayer 1 is: " + fightersLeftP1.get(0));
+        System.out.println("Player 2 is: " + fightersLeftP2.get(0));
+        System.out.println("Enter a number: ");
         System.out.println("1: Mark a win for Player 1.");
         System.out.println("2: Mark a win for Player 2.");
         System.out.println("3: Undo previous change.");
@@ -297,6 +305,15 @@ public class Ironman {
         }
         else {
             System.out.println("Can't undo again.");
+        }
+    }
+
+    private static void win() {
+        if(fightersLeftP1.size() == 0) {
+            System.out.println("Player 1 has won. Congratulations!");
+        }
+        else {
+            System.out.println("Player 2 has won. Congratulations!");
         }
     }
 
