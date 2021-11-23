@@ -1,5 +1,4 @@
 # ironman
-Ironman program for SSBU or NASB
 This type of Ironman is a gamemode in which two players battle through a number of characters in a random order.
 Currently, this program supports Super Smash Bros. Ultimate and Nickelodeon All Star Brawl.
 You can choose how many fighters you want to include as well as excluding specific fighters.
