@@ -7,4 +7,8 @@ You can save the current Ironman as a file and load it later.
 
 To use without an IDE, download the zip and extract the folder. Run Ironman.bat and you're good to go.
 
-Eventually, I'd like to add a GUI that includes the current roster with pictures and allows more control over how the roster is built and fighters are removed. I'd also like to include an option for random stages.
+Future updates may include the following:
+Support for other games
+Pictures of roster
+Option for choosing stage order
+Make it not text-based.
