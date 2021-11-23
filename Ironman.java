@@ -261,7 +261,6 @@ public class Ironman {
             }
             case "4" : {
                 save(scan);
-                scan.nextLine();
                 break;
             }
             case "5" : {
@@ -309,7 +308,7 @@ public class Ironman {
      */
     private static void save(Scanner scan) {
         System.out.println("What would you like the file to be called?");
-        String input = scan.nextLine();
+        String input = scan.nextLine() + ".ironman";
         try {
             File newFile = new File(input);
             if(!newFile.createNewFile()) {
@@ -327,6 +326,7 @@ public class Ironman {
                 if(over == 2) {
                     throw new IOException();
                 }
+                scan.nextLine();
             }
             try {
                 FileWriter myWriter = new FileWriter(input);
@@ -354,6 +354,9 @@ public class Ironman {
         System.out.println("What is the file name?");
         scan.nextLine();
         String input = scan.nextLine();
+        if(input.length() < 8 || !input.substring(input.length() - 8).equals(".ironman")) {
+            input = input + ".ironman";
+        }
         try {
             Scanner fileScanner = new Scanner(new File(input));
             game = fileScanner.nextLine();
@@ -366,13 +369,9 @@ public class Ironman {
             fightersLeftP2 = new ArrayList<>(Arrays.asList(temp.split(", ")));
             fileScanner.close();
         }
-        catch(FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Unable to find this file: " + input);
-            System.out.print("Program running in this directory: ");
-            System.out.println(System.getProperty("user.dir"));
-            System.out.println("Be sure the roster file is in "
-                    + "that directory");
+        catch(Exception e) {
+            System.out.println("Invalid file.");
+            newGame(scan);
         }
     }
 }
