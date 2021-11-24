@@ -249,7 +249,6 @@ public class Ironman {
     private static void menuChoices(String input, Scanner scan) {
         switch(input) {
             case "1" : {
-                System.out.println(fightersLeftP1.get(0));
                 previousChar = fightersLeftP1.remove(0);
                 previousWinner = 1;
                 canUndo = true;
@@ -288,9 +287,9 @@ public class Ironman {
     }
 
     /**
-     * Readds previous fighter removed
+     * Re-adds previous fighter removed
      * pre: none
-     * post: previously removed fighter is readded
+     * post: previously removed fighter is re-added
      */
     private static void undo() {
         if(canUndo) {
